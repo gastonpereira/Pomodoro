@@ -1,0 +1,226 @@
+:root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --text: #1f1f1f;
+    --border: #e5e5e5;
+
+    --button-bg: #1f1f1f;
+    --button-text: #ffffff;
+
+    --ring-color: #0eeb54;
+}
+
+body.dark {
+    --bg: #111111;
+    --surface: #1a1a1a;
+    --text: #f5f5f5;
+    --border: #2d2d2d;
+
+    --button-bg: #f5f5f5;
+    --button-text: #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    transition: 0.3s ease;
+}
+
+.app {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+
+    padding: 2rem;
+}
+
+/* ==========================
+   NAV
+========================== */
+
+nav {
+    position: fixed;
+
+    top: 24px;
+    right: 24px;
+
+    display: flex;
+    gap: 0.75rem;
+}
+
+.theme-button,
+.theme-button-color {
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.theme-button-color {
+    width: auto;
+    padding: 0 1rem;
+}
+
+.theme-button:hover,
+.theme-button-color:hover,
+button:hover {
+    opacity: 0.8;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.app-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* ==========================
+   TIMER
+========================== */
+
+.progress-container {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+}
+
+.progress-ring {
+    width: 100%;
+    height: 100%;
+
+    transform: rotate(-90deg);
+}
+
+.progress-background {
+    fill: none;
+
+    stroke: var(--border);
+    stroke-width: 8;
+}
+
+.progress-bar {
+    fill: none;
+
+    stroke: var(--ring-color);
+    stroke-width: 8;
+
+    stroke-linecap: round;
+
+    transition:
+        stroke 0.3s ease,
+        stroke-dashoffset 1s linear;
+}
+
+.timer-display {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+/* ==========================
+   MODOS
+========================== */
+
+.mode-section {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0.75rem;
+}
+
+.mode-button {
+    padding: 1rem;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+.mode-button.active {
+    background: var(--button-bg);
+    color: var(--button-text);
+
+    border-color: transparent;
+}
+
+/* ==========================
+   CONTROLES
+========================== */
+
+.controls {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0.75rem;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 1rem;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+.primary-button {
+    background: var(--button-bg);
+    color: var(--button-text);
+
+    border-color: transparent;
+}

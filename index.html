@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pomodoro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <nav>
+
+            <button id="theme-toggle" class="theme-button" type="button" aria-label="Cambiar tema">
+                ☾
+            </button>
+
+        </nav>
+
+        <header class="app-header">
+
+            <h1>Pomodoro</h1>
+
+        </header>
+
+
+        <section class="timer-section">
+
+            <div class="progress-container">
+
+                <svg class="progress-ring" width="280" height="280" viewBox="0 0 280 280">
+
+                    <circle class="progress-background" cx="140" cy="140" r="120">
+                    </circle>
+
+                    <circle id="progress-ring" class="progress-bar" cx="140" cy="140" r="120">
+                    </circle>
+
+                </svg>
+
+                <div class="timer-display">
+
+                    <span id="timer">
+                        25:00
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="mode-section">
+
+            <button class="mode-button active" data-minutes="25" type="button">
+                Trabajo
+            </button>
+
+            <button class="mode-button" data-minutes="5" type="button">
+                Descanso
+            </button>
+
+            <button class="mode-button" data-minutes="15" type="button">
+                Largo
+            </button>
+
+        </section>
+
+
+        <section class="controls">
+
+            <button id="start-btn" class="primary-button" type="button">
+                Iniciar
+            </button>
+
+            <button id="pause-btn" class="secondary-button" type="button">
+                Pausar
+            </button>
+
+            <button id="reset-btn" class="secondary-button" type="button">
+                Reiniciar
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
